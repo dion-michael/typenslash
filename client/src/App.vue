@@ -6,9 +6,7 @@
 
 <script>
 export default {
-    mounted (){ 
-      this.$store.dispatch('fetchRooms')
-    }
+
 }
 </script>
 
