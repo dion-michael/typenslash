@@ -1,0 +1,91 @@
+<div class="level is-overlay" style="height: 100px">
+        <!-- PLAYER 1 -->
+        <div class="level-item">
+          <div
+            class="box has-text-left"
+            :class="{'animated fadeOutLeft': turn === 'player2', 'animated fadeInLeft': turn === 'player1'}"
+          >
+            <a
+              :disabled="turn === 'player2'"
+              class="button is-dark"
+              @mouseleave="selectionSound.pause(); selectionSound.currentTime=2"
+              @click="player1.commands.push('attack'); selectionSound.play()"
+            >attack</a>
+            <a
+              :disabled="turn === 'player2'"
+              class="button is-dark"
+              @click="player1.commands.push('ulti')"
+            >ulti</a>
+            <a
+              :disabled="turn === 'player2'"
+              class="button is-dark"
+              @click="player1.commands.push('win')"
+            >win</a>
+            <a
+              :disabled="turn === 'player2'"
+              class="button is-dark"
+              @click="player1.commands.push('dead')"
+            >dead</a>
+            <a :disabled="turn === 'player2'" class="button is-light" @click="execute">execute</a>
+            <select :disabled="turn === 'player2'" v-model="player1.character">
+              <option value="twob">2B</option>
+              <option value="tidus">Tidus</option>
+              <option value="sora">Sora</option>
+              <option value="dio">Dio</option>
+              <option value="sephiroth">Sephiroth</option>
+              <option value="noctis">Noctis</option>
+            </select>
+          </div>
+        </div>
+        <!-- TIME -->
+        <div class="level-item">
+          <div class="box is-dark">
+            <p class="title">80</p>
+          </div>
+        </div>
+        <!-- PLAYER 2 -->
+        <div class="level-item">
+          <div
+            class="box has-text-right"
+            :class="{'animated fadeOutRight': turn === 'player1', 'animated fadeInRight': turn === 'player2'}"
+          >
+            <select v-model="player2.character" :disabled="turn === 'player1'">
+              <option value="twob">2B</option>
+              <option value="tidus">Tidus</option>
+              <option value="sora">Sora</option>
+              <option value="dio">Dio</option>
+              <option value="sephiroth">Sephiroth</option>
+              <option value="noctis">Noctis</option>
+            </select>
+            <a class="button is-light" @click="execute" :disabled="turn === 'player1'">execute</a>
+            <a
+              :disabled="turn === 'player1'"
+              class="button is-dark"
+              @click="player2.commands.push('attack')"
+            >attack</a>
+            <a
+              :disabled="turn === 'player1'"
+              class="button is-dark"
+              @click="player2.commands.push('ulti')"
+            >ulti</a>
+            <a
+              class="button is-dark"
+              @click="player2.commands.push('win')"
+              :disabled="turn === 'player1'"
+            >win</a>
+            <a
+              class="button is-dark"
+              @click="player2.commands.push('dead')"
+              :disabled="turn === 'player1'"
+            >dead</a>
+            <section>
+              <div class="box">
+                <!-- <ul>
+                  <li v-for="(command,i) in player2.commands" :key="i">{{command}}</li>
+                </ul>-->
+                <progress class="progress" value="15" max="100">15%</progress>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
