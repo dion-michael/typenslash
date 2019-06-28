@@ -4,11 +4,23 @@
   </div>
 </template>
 
+<script>
+export default {
+    mounted (){ 
+      this.$store.dispatch('fetchRooms')
+    }
+}
+</script>
+
+
 <style>
 html {
   padding: 0;
   margin: 0;
 }
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
 #nav {
   padding: 30px;
 }
