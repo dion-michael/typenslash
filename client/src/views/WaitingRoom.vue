@@ -45,8 +45,12 @@
         </div>
       </div>
 
-      <div id="goFight" class="animated infinite pulse">
+      <div @click="enterGame" id="goFight" class="animated infinite pulse">
         <p>FIGHT!!</p>
+      </div>
+
+      <div @click="reset" id="reset">
+        <p>RESET SOCKET!!</p>
       </div>
 
       <div style="display: flex; justify-content: center">
@@ -72,26 +76,26 @@ export default {
     }
   },
   methods: {
+    enterGame () {
+      this.$router.push('/game')
+    },
     isExit() {
       this.wannaExit = true
       console.log(this.hero)
     },
     exit() {
-      // axios
-      //   .patch(`http://localhost:3000/rooms/exit/${this.roomName}`, { player: localStorage.username })
-      //   .then(({data}) => {
-      //     console.log(`Player exit from room ${data.name}`);
-      //     this.$store.dispatch('fetchRooms')
-      //     this.$router.push('/rooms')
-      //   })
-      //   .catch(function(err) {
-      //     console.log(err);
-      //   });
       this.$store.commit('SET_ROOM_NAME', '')
       this.$router.push('/rooms')
     },
-    fetchRooms() {
-      
+    reset() {
+      axios
+        .get(`http://localhost:3000/reset`)
+        .then(({data}) => {
+          console.log('game reseted')
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
     }
   }
 }
@@ -125,6 +129,18 @@ label {
   text-align: center;
   font-size: 50px;
   margin-left: 770px;
+  margin-top: 350px;
+  cursor: pointer
+}
+
+#reset {
+  background-color: red;
+  position: absolute;
+  width:200px;
+  height:75px;
+  text-align: center;
+  font-size: 20px;
+  margin-left: -270px;
   margin-top: 350px;
   cursor: pointer
 }
