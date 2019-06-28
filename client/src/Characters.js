@@ -3,7 +3,7 @@ module.exports = {
     attack: {
       motion: "/tidus/attack.gif",
       delay: 500,
-      sound: new Audio("/noctis/sfx/attack.wav")
+      sound: new Audio("/noctissfx/attack.wav")
     },
     idle: {
       motion: "/tidus/idle.gif",
@@ -31,7 +31,7 @@ module.exports = {
     attack: {
       motion: "/2B/attack.gif",
       delay: 4000,
-      sound: new Audio("/noctis/sfx/attack.wav")
+      sound: new Audio("sfx/sephiroth-attack.wav")
     },
     idle: {
       motion: "/2B/idle.gif",
@@ -39,7 +39,8 @@ module.exports = {
     },
     ulti: {
       motion: "/2B/ulti.gif",
-      delay: 5000
+      delay: 5000,
+      sound: new Audio("sfx/noctis-ulti.mp3")
     },
     dead: {
       motion: "/tidus/dead.gif",
@@ -59,7 +60,7 @@ module.exports = {
     attack: {
       motion: "/noctis/attack.gif",
       delay: 3300,
-      sound: new Audio("/noctis/sfx/attack.wav")
+      sound: new Audio("/sfx/noctis-attack.mp3")
     },
     idle: {
       motion: "/noctis/idle.gif",
@@ -67,7 +68,8 @@ module.exports = {
     },
     ulti: {
       motion: "/noctis/ulti.gif",
-      delay: 8000
+      delay: 8000,
+      sound: new Audio("sfx/noctis-ulti.mp3")
     },
     dead: {
       motion: "/noctis/dead.gif",
@@ -87,7 +89,7 @@ module.exports = {
     attack: {
       motion: "/sephiroth/attack.gif",
       delay: 4000,
-      sound: new Audio("/noctis/sfx/attack.wav")
+      sound: new Audio("/sfx/sephiroth-attack.mp3")
     },
     idle: {
       motion: "/sephiroth/idle.gif",
@@ -95,7 +97,8 @@ module.exports = {
     },
     ulti: {
       motion: "/sephiroth/ulti.gif",
-      delay: 5000
+      delay: 5000,
+      sound: new Audio("sfx/sephiroth-ulti.mp3")
     },
     dead: {
       motion: "/sephiroth/dead.gif",
@@ -115,7 +118,7 @@ module.exports = {
     attack: {
       motion: "/sora/attack.gif",
       delay: 4000,
-      sound: new Audio("/noctis/sfx/attack.wav")
+      sound: new Audio("sfx/noctis-attack.wav")
     },
     idle: {
       motion: "/sora/idle.gif",
@@ -143,7 +146,7 @@ module.exports = {
     attack: {
       motion: "/dio/attack.gif",
       delay: 5000,
-      sound: new Audio("/noctis/sfx/attack.wav")
+      sound: new Audio("sfx/noctis-attack.mp3")
     },
     idle: {
       motion: "/dio/idle.gif",
@@ -151,7 +154,8 @@ module.exports = {
     },
     ulti: {
       motion: "/dio/ulti.gif",
-      delay: 10000
+      delay: 10000,
+      sound: new Audio("sfx/dio-ulti.wav")
     },
     dead: {
       motion: "/dio/dead.gif",

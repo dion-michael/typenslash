@@ -20,7 +20,6 @@
             <a :disabled="turn === 'player2'" class="button is-dark" @click="ulti()">ulti</a>
             <a :disabled="turn === 'player2'" class="button is-dark" @click="win()">win</a>
             <a :disabled="turn === 'player2'" class="button is-dark" @click="dead()">dead</a>
-            <!-- <a :disabled="turn === 'player2'" class="button is-light" @click="execute">execute</a> -->
             <select :disabled="turn === 'player2'" v-model="player1.character">
               <option value="twob">2B</option>
               <option value="tidus">Tidus</option>
@@ -51,7 +50,6 @@
               <option value="sephiroth">Sephiroth</option>
               <option value="noctis">Noctis</option>
             </select>
-            <!-- <a class="button is-light" @click="execute" :disabled="turn === 'player1'">execute</a> -->
             <a :disabled="turn === 'player1'" class="button is-dark" @click="attack()">attack</a>
             <a :disabled="turn === 'player1'" class="button is-dark" @click="ulti()">ulti</a>
             <a class="button is-dark" @click="win()" :disabled="turn === 'player1'">win</a>
@@ -114,8 +112,9 @@ export default {
       }, this[this[this.turn].character].attack.delay);
     },
     ulti() {
-      this.nani.play();
+      // this.nani.play();
       this[this.turn].active = this[this[this.turn].character].ulti.motion;
+      this[this[this.turn].character].ulti.sound.play();
       setTimeout(() => {
         this[this.turn].active = this[this[this.turn].character].idle.motion;
         this.turn === "player1"
@@ -148,10 +147,9 @@ export default {
     }
   },
   mounted() {
-    // this.executeOne('attack')
     this.player1.character = "noctis";
     this.player1.active = this[this[this.turn].character].idle.motion;
-    this.player2.character = "noctis";
+    this.player2.character = "dio";
     this.player2.active = this[this[this.turn].character].idle.motion;
     this.audio.volume = 0.2;
     this.winsound.volume = 0.2;
