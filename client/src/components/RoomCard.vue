@@ -20,16 +20,16 @@
       enterRoom() {
         console.log(this.room.name)
         this.$store.commit('SET_ROOM_NAME', this.room.name)
-        axios
-          .patch(`http://localhost:3000/rooms/enter/${this.room.name}`, { player: localStorage.username })
-          .then(({data}) => {
-            console.log(`Player entered room ${data.name}`);
-            this.$store.dispatch('fetchRooms')
-            this.$router.push('/waiting')
-          })
-          .catch(function(err) {
-            console.log(err);
-          });
+        // axios
+        //   .patch(`http://localhost:3000/rooms/enter/${this.room.name}`, { player: localStorage.username })
+        //   .then(({data}) => {
+        //     console.log(`Player entered room ${data.name}`);
+        //     this.$store.dispatch('fetchRooms')
+        //     this.$router.push('/waiting')
+        //   })
+        //   .catch(function(err) {
+        //     console.log(err);
+        //   });
       },
     }
   }

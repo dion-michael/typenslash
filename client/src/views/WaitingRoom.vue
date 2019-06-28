@@ -42,16 +42,16 @@ export default {
       this.wannaExit = true
     },
     exit() {
-      axios
-        .patch(`http://localhost:3000/rooms/exit/${this.roomName}`, { player: localStorage.username })
-        .then(({data}) => {
-          console.log(`Player exit from room ${data.name}`);
-          this.$store.dispatch('fetchRooms')
-          this.$router.push('/rooms')
-        })
-        .catch(function(err) {
-          console.log(err);
-        });
+      // axios
+      //   .patch(`http://localhost:3000/rooms/exit/${this.roomName}`, { player: localStorage.username })
+      //   .then(({data}) => {
+      //     console.log(`Player exit from room ${data.name}`);
+      //     this.$store.dispatch('fetchRooms')
+      //     this.$router.push('/rooms')
+      //   })
+      //   .catch(function(err) {
+      //     console.log(err);
+      //   });
       this.$store.commit('SET_ROOM_NAME', '')
       this.$router.push('/rooms')
     },

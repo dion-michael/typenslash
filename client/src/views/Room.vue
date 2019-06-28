@@ -68,7 +68,8 @@ export default {
         status: 'waiting'
       }
       this.newRoom = ''
-      this.$store.commit('ADD_ROOM', newRoom)
+      // this.$store.commit('ADD_ROOM', newRoom)
+      this.$store.state.rooms.push(newRoom)
     },
 
     isExit() {

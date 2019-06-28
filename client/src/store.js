@@ -31,16 +31,16 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    fetchRooms(context) {
-      axios
-        .get('http://localhost:3000/rooms')
-        .then(({data}) => {
-          console.log(data)
-          context.commit('FETCH_ROOMS', data)
-        })
-        .catch(function(err) {
-          console.log(err);
-        })
-    }
+    // fetchRooms(context) {
+    //   axios
+    //     .get('http://localhost:3000/rooms')
+    //     .then(({data}) => {
+    //       console.log(data)
+    //       context.commit('FETCH_ROOMS', data)
+    //     })
+    //     .catch(function(err) {
+    //       console.log(err);
+    //     })
+    // }
   }
 })
